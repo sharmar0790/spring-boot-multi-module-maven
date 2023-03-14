@@ -1,0 +1,36 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      settings:
+        web-allow-others: true
+  datasource:
+    url: jdbc:h2:mem:demodb
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    spring.jpa.datasource-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      format_sql: true
+  application:
+    name: demo-app
+    version: 1.0.0-SNAPSHOT
+
+server:
+  port: 9090
+  servlet:
+    context-path: /demo
+
+
+#LOGGING CONFIGURATION
+logging:
+  level:
+    org:
+      hibernate:
+        sql: error
+
